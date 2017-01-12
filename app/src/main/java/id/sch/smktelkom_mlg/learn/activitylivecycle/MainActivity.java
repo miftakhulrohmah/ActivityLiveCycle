@@ -14,8 +14,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "onCreate: ");
+        mediaPlayer = MediaPlayer.create(this, R.raw.song);
+        mediaPlayer.start();
+        mediaPlayer.pause();
+        if(mediaPlayer != null){
+            mediaPlayer.release();
+        }
 
+        Log.d(TAG, "onCreate: ");
     }
 
     @Override
